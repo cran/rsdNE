@@ -309,8 +309,8 @@ sym<-function(s1,n1,c){
   # X matrix
 
   X<-rbind(X[(k*(s1^n1)*(s2^n2)*(s3^n3)),],X,X[1,])
-  print('X matrix')
-  print(X)
+  #print('X matrix')
+  #print(X)
 
 
   #####################################################
@@ -353,10 +353,10 @@ sym<-function(s1,n1,c){
     k1<-k1+1
   }
 
-  print("Z_prime_Z matrix")
-  print(Z_prime_Z)
-  print("inv(Z_prime_Z) matrix")
-  print(solve(Z_prime_Z))
+  #print("Z_prime_Z matrix")
+  #print(Z_prime_Z)
+ # print("inv(Z_prime_Z) matrix")
+ # print(solve(Z_prime_Z))
   variance_esitmated_response<-round(var,digits = 4 )
 
   vec1<-c(variance_esitmated_response)
@@ -366,11 +366,10 @@ sym<-function(s1,n1,c){
   total_number_of_runs<-max(vec2)
   vec3<-c('total number of runs',max(vec2))
   vec4<-c('variance of estimated response',unique(vec1) )
-  print(vec3)
-  print(vec4)
-
-
-
+  #print(vec3)
+  #print(vec4)
+printlist=list("X Matrix"= X, "Z_prime_Z matrix"=Z_prime_Z, "Inv(Z_prime_Z) matrix"=solve(Z_prime_Z),'Total number of runs'=max(vec2),'Variance of estimated response'=unique(vec1))
+return(printlist)
 }
 
 
@@ -631,8 +630,8 @@ asym1<-function(n1,n2,c){
   # generated X matrix
 
   X<-rbind(X[(k*(s1^n1)*(s2^n2)),],X,X[1,])
-  print('X matrix')
-  print(X)
+  #print('X matrix')
+  #print(X)
 
 
   #####################################################
@@ -672,10 +671,10 @@ asym1<-function(n1,n2,c){
 
     k1<-k1+1
   }
-  print("Z_prime_Z matrix")
-  print(Z_prime_Z)
-  print("inv(Z_prime_Z) matrix")
-  print(solve(Z_prime_Z))
+  # print("Z_prime_Z matrix")
+  # print(Z_prime_Z)
+  # print("inv(Z_prime_Z) matrix")
+  # print(solve(Z_prime_Z))
   variance_esitmated_response<-round(var,digits = 4 )
 
   vec1<-c(variance_esitmated_response)
@@ -685,10 +684,11 @@ asym1<-function(n1,n2,c){
   total_number_of_runs<-max(vec2)
   vec3<-c('total number of runs',max(vec2))
   vec4<-c('variance of estimated response',unique(vec1) )
-  print(vec3)
-  print(vec4)
+  # print(vec3)
+  # print(vec4)
 
-
+  printlist=list("X Matrix"= X, "Z_prime_Z matrix"=Z_prime_Z, "Inv(Z_prime_Z) matrix"=solve(Z_prime_Z),'Total number of runs'=max(vec2),'Variance of estimated response'=unique(vec1))
+  return(printlist)
 }
 
 
@@ -987,7 +987,7 @@ asym2<-function(s1,n1,s2,n2,c){
   # X matrix
 
   X<-rbind(X[(k*(s1^n1)*(s2^n2)*(s3^n3)),],X,X[1,])
-  print(X)
+  #print(X)
 
 
   #####################################################
@@ -1030,10 +1030,10 @@ asym2<-function(s1,n1,s2,n2,c){
     k1<-k1+1
   }
 
-print("Z_prime_matrix")
-  print(Z_prime_Z)
-  print("inv(Z_prime_Z) matrix")
-  print(solve(Z_prime_Z))
+# print("Z_prime_matrix")
+#   print(Z_prime_Z)
+#   print("inv(Z_prime_Z) matrix")
+#   print(solve(Z_prime_Z))
   variance_esitmated_response<-round(var,digits = 4 )
 
   vec1<-c(variance_esitmated_response)
@@ -1043,7 +1043,9 @@ print("Z_prime_matrix")
   total_number_of_runs<-max(vec2)
   vec3<-c('total number of runs',max(vec2))
   vec4<-c('variance of estimated response',unique(vec1))
-  print(vec3)
-  print(vec4)
+  # print(vec3)
+  # print(vec4)
+  printlist=list("X Matrix"= X, "Z_prime_Z matrix"=Z_prime_Z, "Inv(Z_prime_Z) matrix"=solve(Z_prime_Z),'Total number of runs'=max(vec2),'Variance of estimated response'=unique(vec1))
+  return(printlist)
 }
 
